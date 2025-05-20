@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header-container">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Pesquisar...">
+        </div>
+      </div>
+  <div class="card">
+    <h2>Matrículas</h2>
+    <p>Número de matrículas por rede de ensino – Maranhão</p>
+    <div class="chart-wrapper">
+      <canvas id="donutChart"></canvas>
+    </div>
+    <ul class="legend" id="chartLegend"></ul>
+  </div>
+  <div class="retangulo-cinza">
+    <h2>Dashboard</h2>
+    <div class="iconedash">
+      <img src="iconesapi/Menu.svg" alt="Menu">
+    <div class="configuracoes">
+      <img src="iconesapi/Menu (1).svg" alt="Configurações">  
+    </div>
+    </div>
+    <div class="night-toggle">
+      <span>Modo noturno</span>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
