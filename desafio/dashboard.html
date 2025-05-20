@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matrículas MA por Rede de Ensino</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/desafio/estilos/dashboard.css" />
+</head>
+<body>
+
+  <div class="card">
+    <h2>Matrículas</h2>
+    <p>Número de matrículas por rede de ensino – Maranhão</p>
+    <div class="chart-wrapper">
+      <canvas id="donutChart"></canvas>
+    </div>
+    <ul class="legend" id="chartLegend"></ul>
+  </div>
+
+  <div class="retangulo-cinza">
+    <h2>Dashboard</h2>
+    <div class="iconedash">
+      <img src="iconesapi/Menu.svg" alt="Menu">
+    <div class="configuracoes">
+      <img src="iconesapi/Menu (1).svg" alt="Configurações">  
+    </div>
+    </div>
+    <div class="night-toggle">
+      <span>Modo noturno</span>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/desafio/js/script.js"></script>
+
+</body>
+</html>
