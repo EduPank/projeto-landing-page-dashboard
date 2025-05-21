@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Matrículas MA por Rede de Ensino</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <!-- CSS -->
   <link rel="stylesheet" href="/desafio/estilos/dashboard.css" />
 </head>
+
 <body>
- <!-- cabeçalho, barra de pesquisa -->
+  <!-- cabeçalho, barra de pesquisa -->
   <div class="header-container">
     <div class="search-bar">
       <i class="fas fa-search"></i>
@@ -19,32 +22,53 @@
   </div>
 
   <div class="cards-container">
-  <div class="card">
-    <h2>Matrículas</h2>
-    <p>Número de matrículas por rede de ensino – Maranhão</p>
-    <div class="chart-wrapper">
-      <canvas id="donutChart"></canvas>
-    </div>
-    <ul class="legend" id="chartLegend"></ul>
-  </div>
 
-  <div class="card card-grande">
-    <h2>Docentes</h2>
-    <p>Evolução do número de docentes - Educação Básica - Maranhão - 2007/2020</p>
-    <div class="chart-wrapper1">
-      <canvas id="graficoDocentesAno"></canvas>
+    <!-- Card Matrículas -->
+    <div class="card">
+      <h2>Matrículas</h2>
+      <p>Número de matrículas por rede de ensino – Maranhão</p>
+      <div class="chart-wrapper">
+        <canvas id="donutChart"></canvas>
+      </div>
+      <ul class="legend" id="chartLegend"></ul>
     </div>
-    <ul class="legend" id="docentesLegend"></ul>
+
+    <!-- Card Docentes -->
+    <div class="card card-grande">
+      <h2>Docentes</h2>
+      <p>Evolução do número de docentes - Educação Básica - Maranhão - 2007/2020</p>
+      <div class="chart-wrapper1">
+        <canvas id="graficoDocentesAno"></canvas>
+      </div>
+      <ul class="legend" id="docentesLegend"></ul>
+    </div>
+
+    <!-- Card Escolas -->
+    <div class="card">
+      <h4>Escolas</h4>
+      <p>Total de escolas - educação básica - 2024</p>
+      <div class="big-number">179.286</div>
+      <div class="chart-container">
+        <canvas id="escolasChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Card População -->
+    <div class="card card-grande">
+      <h2>População do Maranhão</h2>
+      <p>Evolução da População do Maranhão (2010–2020)</p>
+      <canvas id="graficoPopulacao"></canvas>
+    </div>
+
   </div>
-</div>
 
   <div class="retangulo-cinza">
     <h2>Dashboard</h2>
     <div class="iconedash">
       <img src="iconesapi/Menu.svg" alt="Menu">
-    <div class="configuracoes">
-      <img src="iconesapi/Menu (1).svg" alt="Configurações">  
-    </div>
+      <div class="configuracoes">
+        <img src="iconesapi/Menu (1).svg" alt="Configurações">
+      </div>
     </div>
     <div class="night-toggle">
       <span>Modo noturno</span>
@@ -58,4 +82,5 @@
   <script type="text/javascript" src="/desafio/js/script.js"></script>
 
 </body>
+
 </html>
