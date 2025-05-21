@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matrículas MA por Rede de Ensino</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/desafio/estilos/dashboard.css" />
 </head>
 <body>
-    <div class="header-container">
-        <div class="search-bar">
-          <i class="fas fa-search"></i>
-          <input type="text" placeholder="Pesquisar...">
-        </div>
-      </div>
+ <!-- cabeçalho, barra de pesquisa -->
+  <div class="header-container">
+    <div class="search-bar">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Pesquisar...">
+    </div>
+  </div>
+
   <div class="card">
     <h2>Matrículas</h2>
     <p>Número de matrículas por rede de ensino – Maranhão</p>
@@ -24,6 +26,7 @@
     </div>
     <ul class="legend" id="chartLegend"></ul>
   </div>
+
   <div class="retangulo-cinza">
     <h2>Dashboard</h2>
     <div class="iconedash">
@@ -40,3 +43,8 @@
       </label>
     </div>
   </div>
+
+  <script type="text/javascript" src="/desafio/js/script.js"></script>
+
+</body>
+</html>
