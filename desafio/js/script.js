@@ -1,4 +1,4 @@
-    document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
       // Dark mode toggle
       const toggle = document.getElementById('darkModeToggle');
       toggle.addEventListener('change', () => {
@@ -47,6 +47,48 @@
           <span class="swatch" style="background:${r.color}"></span>
           <span class="label">${r.name}</span>
           <span class="value">${valores[i].toLocaleString()} (${((valores[i]/total)*100).toFixed(1)}%)</span>`;
-        legendEl.appendChild(li);
-      });
+       legendEl.appendChild(li);
+});
+
+
+// Daados do número de docentes
+const url = "https://simcaq.c3sl.ufpr.br/api/v1/teacher?filter=state:21";
+fetch(url)
+.then(response => response.json())
+.then(data => {
+    const anos = data.result.map(item => item.year);
+    const totais = data.result.map(item => item.total);
+
+    const ctx = document.getElementById("graficoDocentesAno").getContext("2d");
+
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: anos,
+          datasets: [{
+            label: "Total de docentes no Maranhão",
+            data: totais,
+            backgroundColor: "#0851C5",
+            borderRadius: 4
+        }]
+    },options: {
+        responsive: true,
+        plugins: {
+            title: {
+                display: false,
+                text: ""
+            }
+        }, scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
     });
+})
+.catch(error => {
+    console.error("Erro ao buscar dados:", error);
+    });
+});
+
+    

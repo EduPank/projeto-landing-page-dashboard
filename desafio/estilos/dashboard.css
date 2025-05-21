@@ -7,9 +7,7 @@ body {
     margin: 0;
     transition: background 0.3s;
 }
-.card {
-  transform: translate(-285px, 20px);
-}
+
 
 body.night-mode {
     background: #2c2c2c;
@@ -139,4 +137,30 @@ input:checked + .slider {
 }
 input:checked + .slider:before {
     transform: translateX(20px);
+}
+
+/* Para mais altura ao gráfico de colunas */
+.chart-wrapper1 {
+  width: 800px;
+  height: 300px; /* Aumente a altura para gráfico de colunas */
+  margin: 0 auto 16px;
+}
+
+.card-docentes {
+  width: 800px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px; /* espaço entre os cards */
+  margin-left: 280px; /* empurra os cards para fora da div lateral */
+  margin-top: 30px;
+}
+
+.card-grande {
+  width: 620px;
+}
+
+body.night-mode .card {
+  background: #444;
 }
