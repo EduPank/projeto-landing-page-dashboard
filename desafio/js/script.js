@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
   const total = valores.reduce((a, b) => a + b, 0);
-  const legendEl = document.getElementById('chartLegend');
+  const legendEl = document.getElementById('chartLegenda');
   redes.forEach((r, i) => {
     const li = document.createElement('li');
     li.innerHTML = `
