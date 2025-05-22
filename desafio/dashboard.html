@@ -45,14 +45,27 @@
     </div>
 
     <!-- Card Escolas -->
-    <div class="card">
-      <h4>Escolas</h4>
-      <p>Total de escolas - educação básica - 2024</p>
-      <div class="big-number">179.286</div>
-      <div class="chart-container">
-        <canvas id="escolasChart"></canvas>
+    <br><div class="card">
+      <div class="info">
+        <div>
+          <h3>Escolas</h3>
+          <p>Total de escolas - educação básica - 2021</p>
+          <div class="total" id="totalEscolas">Carregando...</div>
+        </div>
+      </div><br>
+
+      <div class="canvas-wrapper">
+        <canvas id="schoolsChart"></canvas>
+      </div>
+<!--isso era pra conseguir separar o diaxo da porcentagem da lengenda maaaas não sei o que houve pois funcionava-->
+      <div class="percent-labels">
+        <span><div class="dot urbana"></div><span class="label-text">Urbana</span><span class="percent" id="urbanaPct"></span></span>
+        <span><div class="dot rural"></div><span class="label-text">Rural</span><span class="percent" id="ruralPct"></span></span>
       </div>
     </div>
+
+
+
 
     <!-- Card População -->
     <div class="card">
