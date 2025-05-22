@@ -277,3 +277,43 @@ body.night-mode .card {
         padding: 10px;
     }
 }
+
+.canvas-wrapper {
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+.canvas-wrapper canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.percent-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.percent-labels span {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.urbana {
+    background-color: #0033A0;
+}
+
+.rural {
+    background-color: #66CCFF;
+}

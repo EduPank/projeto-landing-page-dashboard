@@ -164,9 +164,72 @@ try {
   console.error("Erro ao carregar dados da população:", erro);
 }
 
-
-
-
+fetchData(); // <-- Adicione isso no final do seu DOMContentLoaded
 
 });
 
+
+async function fetchData() {
+  const url = "https://simcaq.c3sl.ufpr.br/api/v1/school/count?dims=location&filter=max_year:2022";
+
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    const records = json.result;
+
+    const anoFiltro = Math.max(...records.map(r => r.year));
+
+    let ruralCount = 0;
+    let urbanCount = 0;
+
+    records.forEach(item => {
+      if (item.year === anoFiltro) {
+        const name = item.location_name.toLowerCase();
+        if (name === "rural") ruralCount += item.total;
+        else if (["urbana", "urbano", "urban"].includes(name)) urbanCount += item.total;
+      }
+    });
+
+    const total = ruralCount + urbanCount;
+    if (total === 0) throw new Error('Total de escolas é zero para o filtro aplicado.');
+
+    const ruralPercent = ((ruralCount / total) * 100).toFixed(1);
+    const urbanPercent = ((urbanCount / total) * 100).toFixed(1);
+
+    document.getElementById('totalEscolas').innerText = total.toLocaleString('pt-BR');
+    document.getElementById('ruralPct').innerText = `${ruralPercent}%`;
+    document.getElementById('urbanaPct').innerText = `${urbanPercent}%`;
+
+    createChart([parseFloat(urbanPercent), parseFloat(ruralPercent)]);
+  } catch (error) {
+    console.error("Erro ao buscar ou processar dados:", error);
+    document.getElementById('totalEscolas').innerText = "Erro";
+  }
+}
+
+function createChart(percentuais) {
+  const ctx = document.getElementById('schoolsChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Urbana', 'Rural'],
+      datasets: [{
+        data: percentuais,
+        backgroundColor: ['#0033A0', '#66CCFF'],
+        borderWidth: 2,
+        hoverOffset: 8,
+      }]
+    },
+    options: {
+      cutout: '70%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: context => `${context.label}: ${context.parsed}%`
+          }
+        }
+      }
+    }
+ });
+}
